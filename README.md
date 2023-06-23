@@ -36,14 +36,14 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://reactjs.org/">Ruby</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://expressjs.com/">Rails</a></li>
+    <li><a href="https://rubyonrails.org/">Rails</a></li>
   </ul>
 </details>
 
