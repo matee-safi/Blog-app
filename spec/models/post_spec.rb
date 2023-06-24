@@ -45,7 +45,8 @@ describe Post, type: :model do
 
   describe 'recent_posts' do
     before(:example) do
-      @user = User.create(name: 'Matee Safi', photo: 'https://example.com/test.png', bio: 'lorem ipsum', posts_counter: 0)
+      @user = User.create(name: 'Matee Safi', photo: 'https://example.com/test.png', bio: 'lorem ipsum',
+                          posts_counter: 0)
       @post = Post.create(title: 'Post', text: 'Lorem ipsum', author: @user, comments_counter: 0, likes_counter: 0)
     end
 
