@@ -1,23 +1,12 @@
-require 'rails_helper'
+class User < ApplicationRecord
+  has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
+  has_many :likes, foreign_key: :author_id, dependent: :destroy
 
-RSpec.describe User, type: :model do
-  describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_numericality_of(:posts_counter).only_integer.is_greater_than_or_equal_to(0) }
-  end
-
-  describe 'associations' do
-    it { should have_many(:posts).dependent(:destroy) }
-    it { should have_many(:comments).dependent(:destroy) }
-    it { should have_many(:likes).dependent(:destroy) }
-  end
-
-  describe '#recent_posts' do
-    let(:user) { create(:user) }
-    let!(:recent_posts) { create_list(:post, 5, author: user) }
-
-    it 'returns the specified number of most recent posts for the user' do
-      expect(user.recent_posts(3)).to eq(recent_posts.reverse.take(3))
-    end
+  validates :name, presence: true
+  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  
+  def recent_posts(limit = 3)
+    posts.order(created_at: :desc).limit(limit)
   end
 end
