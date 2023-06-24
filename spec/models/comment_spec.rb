@@ -33,8 +33,8 @@ RSpec.describe Like, type: :model do
 
     subject do
       Like.new(
-        user: user,
-        post: post
+        user:,
+        post:
       )
     end
 
