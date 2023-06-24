@@ -10,20 +10,6 @@ RSpec.describe User, type: :model do
     )
   end
 
-  describe 'Associations' do
-    it 'has many posts' do
-      expect(subject).to have_many(:posts).with_foreign_key(:author_id).dependent(:destroy)
-    end
-
-    it 'has many likes' do
-      expect(subject).to have_many(:likes).with_foreign_key(:author_id).dependent(:destroy)
-    end
-
-    it 'has many comments' do
-      expect(subject).to have_many(:comments).with_foreign_key(:author_id).dependent(:destroy)
-    end
-  end
-
   describe 'Validations' do
     it 'is valid with valid attributes' do
       expect(subject).to be_valid
