@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-  def index; end
+  def index
+    @posts = Post.all
+  end
 
-  def show; end
+  def show
+    @post = Post.find_by(id: params[:user_id])
+  end
 end

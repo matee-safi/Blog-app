@@ -18,4 +18,22 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Posts')
     end
   end
+
+  describe 'GET #show each user post' do
+    before :each do
+      get '/users/1/posts/1'
+    end
+    it 'returns http success' do
+      expect(response).to have_http_status(:success)
+    end
+    it 'checks if response status was correct' do
+      expect(response.status).to eq(200)
+    end
+    it 'checks if the correct template was rendered' do
+      expect(response).to render_template(:show)
+    end
+    it 'checks if the response body includes the correct placeholder text' do
+      expect(response.body).to include('Post')
+    end
+  end
 end
