@@ -9,7 +9,7 @@ RSpec.describe 'Users', type: :request do
       expect(response).to have_http_status(:success)
     end
     it 'checks if response status was correct' do
-        expect(response.status).to eq(200)
+      expect(response.status).to eq(200)
     end
     it 'checks if the correct template was rendered' do
       expect(response).to render_template(:index)
