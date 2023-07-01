@@ -13,3 +13,107 @@
  *= require_tree .
  *= require_self
  */
+
+.back {
+  font-size: 1.5rem;
+  margin: 10px 30px 10px auto;
+  justify-self: flex-end;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  padding: 10px;
+}
+
+.user div {
+  border: black 1px solid;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+}
+
+.user-image img {
+  width: 100px;
+  height: 100px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 0 5%;
+  height: 100px;
+}
+
+.user-info h3 {
+  align-self: end;
+}
+
+.bio {
+  margin: 10px;
+  padding: 10px;
+  border: black 1px solid;
+}
+
+.post {
+  border: black 1px solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+.post div {
+  display: flex;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: end;
+  padding-right: 5%;
+}
+
+.btn-container {
+  display: flex;
+}
+
+.btn {
+  border: black 1px solid;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: bold;
+  justify-self: center;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: red;
+}
+
+.comments {
+  border: black 1px solid;
+  margin: -10px 10px 30px;
+  padding: 10px;
+}
+
+.show-post {
+  border: black 1px solid;
+  margin: 10px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  gap: 50px;
+}
+
+.post-content {
+  padding: 10px;
+}

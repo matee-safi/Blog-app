@@ -1,1 +1,21 @@
-<h1>Post 1</h1>
+<div class="btn-container">
+    <%= link_to "Back to Posts", user_posts_path, class:'back' %>
+</div>
+<div class="show-post">
+    <div class="post-header">
+        <h2><%= @post.title %> by <%= @user.name %></h2>
+        <p>Comments: <%= @post.comments_counter %>,&nbsp; Likes: <%= @post.likes_counter %></p>
+    </div>
+    <div>
+        <p class="post-content"><%= @post.text %></p>
+    </div>
+</div>
+<% if @post.comments.length > 0 %>
+<div class="comments">
+    <% @post.comments.each do |comment| %>
+    <div>
+        <p><%= comment.user.name %>: <%= comment.text %></p>
+    </div>
+    <% end %>
+</div>
+<% end %>

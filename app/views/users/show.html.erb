@@ -1,1 +1,21 @@
-<h1>User 1</h1>
+<div class='btn-container'><%= link_to "Back to Users List", "/", class:"back" %></div>
+<%= render @user %>
+<div class="bio">
+    <h1>Bio</h1>
+    <p><%= @user.bio %></p>
+</div>
+<div class="posts">
+    <% @recent_posts.each do |post| %>
+        <div class="post">
+            <h2><%= post.title %></h2>
+            <p><%= post.text %></p>
+            <div>
+                <p>Comments: <%= post.comments_counter %></p>
+                <p>Likes: <%= post.likes_counter %></p>
+            </div>
+        </div>
+    <% end %>
+    <div class="btn-container">
+        <%= link_to "See all posts", user_posts_path(@user), class:'btn' %>
+    </div>
+</div>
