@@ -1,0 +1,12 @@
+<div class="btn-container">
+    <%= link_to 'Back', '../', class: 'back btn btn-danger mt-2 me-2' %>
+</div>
+
+<div class="form-container">
+    <%= bootstrap_form_with model: @comment, url: user_post_comments_path do |f| %>
+
+    <%= f.text_field :text, placeholer: 'Add a comment...' %>
+    <%= f.submit %>
+
+    <% end %>
+</div>
