@@ -54,7 +54,7 @@
 .user-info {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   padding: 0 5%;
   height: 100px;
 }

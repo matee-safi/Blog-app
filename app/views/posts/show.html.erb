@@ -1,5 +1,5 @@
 <div class="btn-container">
-    <%= link_to "Back to Posts", user_posts_path, class:'back btn btn-danger mt-2' %>
+    <%= link_to "Back to Posts", user_posts_path, class:'back btn btn-danger mt-2 me-2' %>
 </div>
 <div class="show-post">
     <div class="post-header">
@@ -19,3 +19,9 @@
     <% end %>
 </div>
 <% end %>
+<div class="btn-container">
+    <%= form_with(model: @like, url: user_post_likes_path(user_id: @post.author, post_id: @post.id) ) do |f| %>
+    <%= f.submit "Add Like" ,class: 'btn btn-primary ms-2'%>
+    <% end %>
+    <%= link_to "Comment", new_user_post_comment_path(user_id: @post.author, post_id: @post.id), class:'btn btn-success ms-2' %>
+</div>
