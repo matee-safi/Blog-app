@@ -14,10 +14,20 @@
  *= require_self
  */
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.notice {
+  color: green;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .back {
   font-size: 1.5rem;
-  margin: 10px 30px 10px auto;
-  justify-self: flex-end;
 }
 
 .user {
@@ -78,7 +88,6 @@
 }
 
 .btn {
-  border: black 1px solid;
   text-decoration: none;
   padding: 5px 10px;
   font-weight: bold;
@@ -116,4 +125,8 @@ a:hover {
 
 .post-content {
   padding: 10px;
+}
+
+.form-container {
+  padding: 0 5%;
 }

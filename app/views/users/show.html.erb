@@ -1,4 +1,4 @@
-<div class='btn-container'><%= link_to "Back to Users List", "/", class:"back" %></div>
+<div class='d-flex'><%= link_to "Back to Users List", "/", class:"back btn btn-danger mt-2" %></div>
 <%= render @user %>
 <div class="bio">
     <h1>Bio</h1>
@@ -16,6 +16,7 @@
         </div>
     <% end %>
     <div class="btn-container">
-        <%= link_to "See all posts", user_posts_path(@user), class:'btn' %>
+        <%= link_to "See all posts", user_posts_path(@user), class:'btn btn-primary' %>
+        <%= link_to "Create new post", new_user_post_path(@user), class:'btn btn-success' %>
     </div>
 </div>
