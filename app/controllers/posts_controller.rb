@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @user = User.includes(:posts).find_by(id: params[:user_id])
     @post = @user.posts.find_by(id: params[:id])
   end
-  
+
   def new
     @post = Post.new
   end
