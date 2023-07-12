@@ -135,6 +135,11 @@ To run tests, run the following command:
 - Twitter: [@twitterhandle](https://twitter.com/matee_safi)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/matee-safi/)
 
+👤 **Ismail Changezi**
+
+- GitHub: [@IsmailChangezi](https://github.com/IsmailChangezi)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ismailchangezi/)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
