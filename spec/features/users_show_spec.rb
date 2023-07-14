@@ -54,7 +54,7 @@ describe 'Users Show', type: :feature do
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
 
-  scenario "Checks recent_posts method" do
+  scenario 'Checks recent_posts method' do
     expect(user.recent_posts).to eq([post3, post2, post1])
   end
 

@@ -41,7 +41,7 @@ RSpec.describe 'Users Index', type: :feature do
     expect(page).to have_content('Legese Title')
   end
 
-  scenario "I can see the first comments on a post" do
+  scenario 'I can see the first comments on a post' do
     visit '/users'
     click_link 'Akai321'
     click_link 'See all posts'
