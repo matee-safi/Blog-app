@@ -12,6 +12,7 @@ RSpec.describe 'Users Index', type: :feature do
     Post.create(title: 'Amaterasu',
                 text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life',
                 author_id: author2.id)
+    Comment.create(user_id: author1.id, post_id: author2.posts.first.id, text: 'I like this post')
   end
 
   scenario 'I can see the username of all other users' do
@@ -38,5 +39,12 @@ RSpec.describe 'Users Index', type: :feature do
     expect(page).to have_content('Abebe')
     expect(page).to have_content('Abebe bio')
     expect(page).to have_content('Legese Title')
+  end
+
+  scenario "I can see the first comments on a post" do
+    visit '/users'
+    click_link 'Akai321'
+    click_link 'See all posts'
+    expect(page).to have_content('I like this post')
   end
 end

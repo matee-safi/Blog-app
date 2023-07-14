@@ -54,10 +54,11 @@ describe 'Users Show', type: :feature do
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
 
-  scenario "When I click to see all posts, it redirects me to the user's post's index page" do
-    click_link 'See all posts'
-    expect(page).to have_content('The way of the Water')
-    expect(page).to have_content('Amaterasu')
-    expect(page).to have_content('Legacy')
+  scenario "Checks recent_posts method" do
+    expect(user.recent_posts).to eq([post3, post2, post1])
+  end
+
+  scenario 'I can see the pagination' do
+    expect(page).to have_content('See all posts')
   end
 end
