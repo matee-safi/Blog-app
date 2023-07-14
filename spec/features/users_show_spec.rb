@@ -48,6 +48,7 @@ describe 'Users Show', type: :feature do
   end
 
   scenario "When I click a user's post, it redirects me to that post's show page" do
+    click_link 'See all posts'
     click_link 'The way of the Water'
     expect(page).to have_content('The way of the Water')
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')

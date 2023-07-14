@@ -1,39 +1,38 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET #index' do
-    before :each do
-      get users_path
-    end
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-    it 'checks if response status was correct' do
-      expect(response.status).to eq(200)
-    end
-    it 'checks if the correct template was rendered' do
-      expect(response).to render_template(:index)
-    end
-    it 'checks if the response body includes the correct placeholder text' do
-      expect(response.body).to include('Users')
-    end
+describe 'Users Post Index', type: :feature do
+  before :each do
+    @user = User.create(name: 'Muhammed-ali', photo: 'https://Akaiiii.jpg', bio: 'Martial Artist')
+    @user2 = User.create(name: 'Bonzai73', photo: 'https://bon-bon.jpg', bio: 'Monk of the mountains')
+    @post1 = Post.create(author_id: @user.id, title: 'The way of the Water',
+                         text: 'In martial arts, the way of the water is the way of the soft and yielding')
+    @post2 = Post.create(author_id: @user.id, title: 'Amaterasu',
+                         text: 'Amaterasu is the goddess of the sun and the universe, the ultimate source of all life')
+    @post3 = Post.create(author_id: @user.id, title: 'Legacy', text: 'The legacy of the righteous is a blessing')
+    Comment.create(user_id: @user2.id, post_id: @post1.id, text: 'I like this post')
+    Comment.create(user_id: @user.id, post_id: @post1.id, text: 'Thanks! I wrote it myself based on my experiences')
+    Like.create(user_id: @user2.id, post_id: @post1.id)
+    Like.create(user_id: @user.id, post_id: @post1.id)
+    visit user_posts_path(@user.id)
   end
 
-  describe 'GET #show' do
-    before :each do
-      get user_path(1)
-    end
-    it 'returns http success' do
-      expect(response).to have_http_status(:success)
-    end
-    it 'checks if response status was correct' do
-      expect(response.status).to eq(200)
-    end
-    it 'checks if the correct template was rendered' do
-      expect(response).to render_template(:show)
-    end
-    it 'checks if the response body includes the correct placeholder text' do
-      expect(response.body).to include('User')
-    end
+  scenario "I can see the user's profile picture" do
+    expect(page).to have_css("img[src*='https://Akaiiii.jpg']")
+  end
+
+  scenario "I can see the user's username" do
+    expect(page).to have_content('Muhammed-ali')
+  end
+
+  scenario 'I can see the number of posts the user has written' do
+    expect(page).to have_content('Number of posts: 3')
+  end
+
+  scenario "I can see a post's title" do
+    expect(page).to have_content('The way of the Water')
+  end
+
+  scenario "I can see some of the post's body" do
+    expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
 end

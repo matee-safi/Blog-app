@@ -35,4 +35,21 @@ describe 'Users Post Index', type: :feature do
   scenario "I can see some of the post's body" do
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
+
+  scenario 'I can see the first comments on a post' do
+    expect(page).to have_content('I like this post')
+  end
+
+  scenario 'I can see how many comments a post has' do
+    expect(page).to have_content('Comments: 2')
+  end
+
+  scenario 'I can see how many likes a post has' do
+    expect(page).to have_content('Likes: 2')
+  end
+
+  scenario "When I click on a post, it redirects me to that post's show page" do
+    click_on('The way of the Water')
+    expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
+  end
 end
