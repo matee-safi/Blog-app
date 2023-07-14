@@ -60,8 +60,4 @@ describe 'Users Show', type: :feature do
   scenario 'Checks recent_posts method' do
     expect(user.recent_posts).to eq([post3, post2, post1])
   end
-
-  scenario 'I can see the pagination' do
-    expect(page).to have_content('See all posts')
-  end
 end

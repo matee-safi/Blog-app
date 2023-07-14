@@ -52,4 +52,9 @@ describe 'Users Post Index', type: :feature do
     click_on('The way of the Water')
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
+
+  scenario 'I can see the pagination' do
+    click_on('Back')
+    expect(page).to have_content('See all posts')
+  end
 end
