@@ -55,7 +55,7 @@ describe 'Users Show', type: :feature do
     click_link 'See all posts'
     click_link 'The way of the Water'
     expect(page).to have_current_path(user_post_path(user, post1))
-  end  
+  end
 
   scenario 'Checks recent_posts method' do
     expect(user.recent_posts).to eq([post3, post2, post1])
