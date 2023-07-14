@@ -19,6 +19,10 @@ describe 'Users Show', type: :feature do
     Post.create(author_id: user.id, title: 'Legacy', text: 'The legacy of the righteous is a blessing')
   end
 
+  let! :comment1 do
+    Comment.create(user_id: user.id, post_id: post1.id, text: 'I like this post')
+  end
+
   before { visit user_path(user) }
 
   scenario "I can see the user's profile picture" do
@@ -50,9 +54,8 @@ describe 'Users Show', type: :feature do
   scenario "When I click a user's post, it redirects me to that post's show page" do
     click_link 'See all posts'
     click_link 'The way of the Water'
-    expect(page).to have_content('The way of the Water')
-    expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
-  end
+    expect(page).to have_current_path(user_post_path(user, post1))
+  end  
 
   scenario 'Checks recent_posts method' do
     expect(user.recent_posts).to eq([post3, post2, post1])
