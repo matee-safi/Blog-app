@@ -1,6 +1,8 @@
 <div class="user">
     <div class="user-image">
+    <% if user.photo %>
         <%= image_tag user.photo %>
+    <% end %>
     </div>
     <div class="user-info">
         <h1><%= user.name %></h1>

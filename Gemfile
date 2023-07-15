@@ -78,4 +78,4 @@ gem 'bootstrap', '~> 5.0'
 gem 'bootstrap_form', '~> 5.2'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'

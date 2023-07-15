@@ -2,7 +2,9 @@
     <div class='btn-container'><%= link_to "Back to User", @user, class:'back btn btn-danger mt-2 me-2' %></div>
     <div class="user">
         <div class="user-image">
-            <%= image_tag @user.photo %>
+            <% if @user.photo %>
+                <%= image_tag @user.photo %>
+            <% end %>
         </div>
         <div class="user-info">
             <h1><%= @user.name %></h1>
