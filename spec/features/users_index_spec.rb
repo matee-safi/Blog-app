@@ -44,7 +44,7 @@ RSpec.describe 'Users Index', type: :feature do
   scenario 'I can see the first comments on a post' do
     visit '/users'
     click_link 'Akai321'
-    click_link 'See all posts'
+    click_link 'The way of the Water'
     expect(page).to have_content('I like this post')
   end
 end

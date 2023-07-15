@@ -47,12 +47,7 @@ describe 'Users Show', type: :feature do
     expect(page).to have_content('Legacy')
   end
 
-  scenario "I can see a button that lets me view all of a user's posts" do
-    expect(page).to have_link('See all posts')
-  end
-
   scenario "When I click a user's post, it redirects me to that post's show page" do
-    click_link 'See all posts'
     click_link 'The way of the Water'
     expect(page).to have_current_path(user_post_path(user, post1))
   end

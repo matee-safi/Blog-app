@@ -53,7 +53,9 @@ describe 'Users Post Index', type: :feature do
     expect(page).to have_content('In martial arts, the way of the water is the way of the soft and yielding')
   end
 
-  scenario 'I can see the pagination' do
+  scenario 'I can see the pagination if there are more then 3 posts but not if I have less' do
+    expect(page).to have_no_content('See all posts')
+    @post4 = Post.create(author_id: @user.id, title: 'The way of the Fire', text: 'Fire is the way of the strong')
     click_on('Back')
     expect(page).to have_content('See all posts')
   end
