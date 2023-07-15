@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @post.comments.new(user: current_user, **comment_params)
+    @comment = @post.comments.includes(:user).new(user: current_user, **comment_params)
     if @comment.save
       redirect_to user_post_path(@post.author, @post), notice: 'Comment added successfully!'
     else
