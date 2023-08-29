@@ -14,6 +14,9 @@
     <% if notice %>
       <p style="color: green" class="notice"><%= notice %></p>
     <% end %>
+    <% if alert %>
+      <p style="color: red" class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
